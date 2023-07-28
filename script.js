@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 		arr.push(style.split("="));	
 	})
 
-		console.log(arr);
+		// console.log(arr);
 	size.value = arr[11][1];
 	color.value = arr[10][1];
+	document.body.style.fontSize = arr[11][1]+"px";
+	document.body.style.color = arr[10][1];
 });
 
 
