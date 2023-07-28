@@ -27,10 +27,25 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 	})
 
 		// console.log(arr);
-	size.value = arr[11][1];
-	color.value = arr[10][1];
-	document.body.style.fontSize = arr[11][1]+"px";
-	document.body.style.color = arr[10][1];
+	
+	let newColor, newSize;
+
+	for(let ar of arr){
+		// console.log(ar);
+		if(ar[0] === " fontsize"){
+			newSize = ar[1];
+			// console.log(ar[1]);
+		}
+		if(ar[0] === " fontcolor"){
+			newColor = ar[1];
+			// console.log(ar[1]);
+		}
+	}
+	
+	size.value = newSize;
+	color.value = newColor;
+	document.body.style.fontSize = newSize+"px";
+	document.body.style.color = newColor;
 });
 
 
