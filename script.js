@@ -10,30 +10,25 @@ form.addEventListener('submit',(e)=>{
 	let fontColor = color.value;
 	console.log(fontColor,fontSize);
 
-	document.cookie = `fontSize = ${fontSize}; path=https://course.acciojob.com/open-web-editor?question=c594255e-e53e-49ef-b3cb-0e68e8866e36`;
-	document.cookie = `fontColor = ${fontColor}; path=https://course.acciojob.com/open-web-editor?question=c594255e-e53e-49ef-b3cb-0e68e8866e36`;
+	document.cookie = `fontsize = ${fontSize}; path=https://course.acciojob.com/open-web-editor?question=c594255e-e53e-49ef-b3cb-0e68e8866e36`;
+	document.cookie = `fontcolor = ${fontColor}; path=https://course.acciojob.com/open-web-editor?question=c594255e-e53e-49ef-b3cb-0e68e8866e36`;
 
 	document.body.style.fontSize = fontSize+"px";
 	document.body.style.color = fontColor;
 })
 
 document.addEventListener('DOMContentLoaded', (e)=>{
-	e.preventDefault();
+	// e.preventDefault();
 	let styles = document.cookie.split(';');
-	console.log(styles);
+	// console.log(styles);
+	let arr = [];
 	styles.forEach((style)=>{
-		let arr = style.split("=");
-		console.log(arr[1]);
-		
-		if(arr[0]==="fontSize"){
-			size.value = arr[1];
-			document.body.style.fontSize = fontSize+"px";
-		}
-		else if(arr[0] === 'fontColor'){
-			color.value = arr[1];
-			document.body.style.color = fontColor;
-		}
+		arr.push(style.split("="));	
 	})
+
+		console.log(arr);
+	size.value = arr[11][1];
+	color.value = arr[10][1];
 });
 
 
